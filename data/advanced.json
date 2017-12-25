@@ -10,10 +10,32 @@
 		"description": "ARRAY Parameter definition"
 	},
 	{
-		"displayText": "@begin-end-block",
+		"displayText": "@begin-end-block one",
+		"snippet": "BEGIN\n\t$1\nEND;",
+		"description": "A simple BEGIN END block"
+	},{
+		"displayText": "@begin-end-block two",
+		"snippet": "BEGIN
+		\t$1
+		END;",
+		"description": "A simple BEGIN END block"
+	},{
+		"displayText": "@begin-end-block three",
 		"snippet": "BEGIN\n
-								\t$1\n
-								END;",
+		\t$1\n
+		END;",
+		"description": "A simple BEGIN END block"
+	},{
+		"displayText": "@begin-end-block four",
+		"snippet": "BEGIN\n
+\t$1\n
+END;",
+		"description": "A simple BEGIN END block"
+	},{
+		"displayText": "@begin-end-block five",
+		"snippet": "BEGIN\n
+									\t$1\n
+									END;",
 		"description": "A simple BEGIN END block"
 	},
 	{
