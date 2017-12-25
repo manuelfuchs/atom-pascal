@@ -30,6 +30,141 @@
 		"description": "Dispose Method snippet"
 	},
 	{
+		"displayText": "@enum",
+		"snippet": "T${1:EnumName} = (${2:meOne}, $3);",
+		"description": "Add a basic enumeration type"
+	},
+	{
+		"displayText": "@for-to-array",
+		"snippet": "FOR ${1:i} := Low(${2:array-name}) TO High(${3:array-name}) DO BEGIN\n\t$4\nEND;",
+		"description": "for to loop snippet for arrays"
+	},
+	{
+		"displayText": "@for-to-string",
+		"snippet": "FOR ${1:i} := 1 TO Length(${2:string-name}) DO BEGIN\n\t$4\nEND;",
+		"description": "for to loop snippet for strings"
+	},
+	{
+		"displayText": "@for-downto-array",
+		"snippet": "FOR ${1:i} := High(${2:array-name}) DOWNTO Low(${3:array-name}) DO BEGIN\n\t$4\nEND;",
+		"description": "for downto loop snippet for arrays"
+	},
+	{
+		"displayText": "@for-downto-string",
+		"snippet": "FOR ${1:i} := Length(${2:array-name}) DOWNTO 1 DO BEGIN\n\t$4\nEND;",
+		"description": "for downto loop snippet for strings"
+	},
+	{
+		"displayText": "@for-in",
+		"snippet": "FOR ${1:MyElem} IN ${2:MyList} DO BEGIN\n\t$3\nEND;",
+		"description": "for in loop for lists"
+	},
+	{
+		"displayText": "@freemem",
+		"snippet": "FreeMem(${1:pointer}, ${2:size-of-releasable-Memory});",
+		"description": "FreeMem snippet"
+	},
+	{
+		"displayText": "@function",
+		"snippet": "FUNCTION ${1:FunctionName}(${2:parameter}): ${3:returnType};\nBEGIN\n\t$4\nEND;",
+		"description": "FUNCTION snippet"
+	},
+	{
+		"displayText": "@function-head",
+		"snippet": "FUNCTION ${1:FunctionName}(${2:parameter}): ${3:returnType};",
+		"description": "FUNCTION head snippet, can be used in interface declarations"
+	},
+	{
+		"displayText": "@getmem",
+		"snippet": "GetMem(${1:pointer}, ${2:size-of-needed-Memory});",
+		"description": "GetMem snippet"
+	},
+	{
+		"displayText": "@if",
+		"snippet": "IF ${1:condition} THEN BEGIN\n\t$2\nEND;",
+		"description": "IF snippet"
+	},
+	{
+		"displayText": "@else-if",
+		"snippet": "ELSE IF ${1:condition} THEN BEGIN\n\t$2\nEND;",
+		"description": "ELSE IF snippet"
+	},
+	{
+		"displayText": "@else",
+		"snippet": "ELSE BEGIN\n\t$1\nEND;",
+		"description": "ELSE snippet"
+	},
+	{
+		"displayText": "@new",
+		"snippet": "New(${1:pointer});",
+		"description": "New snippet"
+	},
+	{
+		"displayText": "@procedure",
+		"snippet": "PROCEDURE ${1:ProcedureName}(${2:parameters});\nBEGIN\n\t$3\nEND;",
+		"description": "PROCEDURE snippet"
+	},
+	{
+		"displayText": "@procedure-head",
+		"snippet": "PROCEDURE ${1:ProcedureName}(${2:parameters});",
+		"description": "PROCEDURE head snippet, can be used in interface declarations"
+	},
+	{
+		"displayText": "@program",
+		"snippet": "PROGRAM $1\nBEGIN\nEND.",
+		"description": "PROGRAM snippet"
+	},
+	{
+		"displayText": "@readln",
+		"snippet": "ReadLn($0);",
+		"description": "ReadLn snippet"
+	},
+	{
+		"displayText": "@record",
+		"snippet": "RECORD\n\t$1\nEND;",
+		"description": "RECORD snippet"
+	},
+	{
+		"displayText": "@repeat-until",
+		"snippet": "REPEAT\n\t$2\nUNTIL (${1:condition});",
+		"description": "REPEAT UNTIL loop snippet"
+	},
+	{
+		"displayText": "@type",
+		"snippet": "TYPE\n\t$1",
+		"description": "TYPE snippet"
+	},
+	{
+		"displayText": "@unit",
+		"snippet": "UNIT $1\nINTERFACE\n\t${2:public method list}\nIMPLEMENTATION\n\t${3:method implementation}\nBEGIN\n\t$4\nEND;",
+		"description": "UNIT snippet"
+	},
+	{
+		"displayText": "@var",
+		"snippet": "VAR\n\t$1",
+		"description": "VAR snippet"
+	},
+	{
+		"displayText": "@while-do",
+		"snippet": " WHILE ${1:condition} DO BEGIN\n\t$2\nEND;",
+		"description": "WHILE DO loop snippet"
+	},
+	{
+		"displayText": "@writeln",
+		"snippet": "WriteLn(${1:output});",
+		"description": "write something to the console"
+	},
+	{
+		"displayText": "@writeln-lineseperator",
+		"snippet": "WriteLn;",
+		"description": "prints a empty line to the console"
+	},
+	{
+		"displayText": "@write-without-linebreak",
+		"snippet": "Write($1);",
+		"description": "writes something without linebreak afterwards to the console"
+	},
+	{
 		"displayText": "",
 		"snippet": "",
 		"description": ""
