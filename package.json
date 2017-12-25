@@ -1,10 +1,9 @@
 {
   "name": "Pascal",
   "main": "./lib/pascal",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "This ATOM Package for the language Pascal is written from several students of the University of Applied Sciences Upper Austria Campus Hagenberg.",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
     "atom-workspace": "pascal:toggle"
   },
@@ -13,6 +12,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
