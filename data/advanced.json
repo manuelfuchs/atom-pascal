@@ -12,8 +12,8 @@
 	{
 		"displayText": "@begin-end-block",
 		"snippet": "BEGIN\n
-      \t$1\n
-      END;",
+								\t$1\n
+								END;",
 		"description": "A simple BEGIN END block"
 	},
 	{
