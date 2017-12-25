@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle pascal",
+        "command": "pascal:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "pascal",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "pascal:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

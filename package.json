@@ -1,0 +1,18 @@
+{
+  "name": "fhhgb_language_pascal",
+  "main": "./lib/pascal",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "pascal:toggle"
+  },
+  "repository": "https://github.com/manuelfuchs/fhhgb-language-pascal",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
