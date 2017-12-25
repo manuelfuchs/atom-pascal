@@ -2,7 +2,7 @@
   "name": "fhhgb_language_pascal",
   "main": "./lib/pascal",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "This ATOM Package for the language Pascal is written from several students of the University of Applied Sciences Upper Austria Campus Hagenberg.",
   "keywords": [
   ],
   "activationCommands": {
