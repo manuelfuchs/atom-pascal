@@ -1,16 +1,24 @@
 {
-  "name": "Pascal",
-  "main": "./lib/pascal",
-  "version": "0.1.0",
+  "name": "fhhgb-pascal",
+  "main": "./lib/main",
+  "version": "0.0.0",
   "description": "This ATOM Package for the language Pascal is written from several students of the University of Applied Sciences Upper Austria Campus Hagenberg.",
-  "keywords": [],
-  "activationCommands": {
-    "atom-workspace": "pascal:toggle"
-  },
-  "repository": "https://github.com/manuelfuchs/fhhgb-language-pascal",
+  "keywords": [
+    "pascal",
+    "autocomplete",
+    "provider"
+  ],
+  "repository": "https://github.com/lonekorean/atom-autocomplete-boilerplate",
+  "author": "Manuel Fuchs <manuel.fuchs49@gmail.com>",
   "license": "MIT",
   "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+    "atom": ">=1.15.0 <2.0.0"
   },
-  "dependencies": {}
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "getProvider"
+      }
+    }
+  }
 }
