@@ -111,7 +111,7 @@
 	},
 	{
 		"displayText": "@program",
-		"snippet": "PROGRAM $1\nBEGIN\nEND.",
+		"snippet": "PROGRAM $1\nBEGIN\n\t${2:main-code}\nEND.",
 		"description": "PROGRAM snippet"
 	},
 	{
