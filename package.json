@@ -9,7 +9,7 @@
     "provider"
   ],
   "repository": "https://github.com/manuelfuchs/atom-pascal",
-  "author": "Manuel Fuchs <manuel.fuchs49@gmail.com>",
+  "author": "Manuel Fuchs",
   "license": "MIT",
   "engines": {
     "atom": ">=1.15.0 <2.0.0"
