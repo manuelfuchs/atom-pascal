@@ -8,5 +8,17 @@
 		"displayText": "@array-parameter-definition",
 		"snippet": "ARRAY OF $1",
 		"description": "ARRAY Parameter definition"
+	},
+	{
+		"displayText": "@begin-end-block",
+		"snippet": "BEGIN\n
+      \t$1\n
+      END;",
+		"description": "A simple BEGIN END block"
+	},
+	{
+		"displayText": "",
+		"snippet": "",
+		"description": ""
 	}
 ]
