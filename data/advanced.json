@@ -10,9 +10,24 @@
 		"description": "ARRAY Parameter definition"
 	},
 	{
-		"displayText": "@begin-end-block one",
+		"displayText": "@begin-end-block",
 		"snippet": "BEGIN\n\t$1\nEND;",
 		"description": "A simple BEGIN END block"
+	},
+	{
+		"displayText": "@case",
+		"snippet": "CASE ${1:condition} OF\n\t$2\nEND;",
+		"description": "Case construct"
+	},
+	{
+		"displayText": "@const",
+		"snippet": "CONST\n\t$1",
+		"description": "CONST declaration block for constants"
+	},
+	{
+		"displayText": "@dispose",
+		"snippet": "Dispose(${1:pointer});",
+		"description": "Dispose Method snippet"
 	},
 	{
 		"displayText": "",

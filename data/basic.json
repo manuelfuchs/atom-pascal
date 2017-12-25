@@ -1,5 +1,26 @@
 [
 	"ARRAY",
 	"BEGIN",
-	"END"
+	"BOOLEAN",
+	"CHAR",
+	"DOWNTO",
+	"END",
+	"ELSE",
+	"FALSE",
+	"FOR",
+	"FUNCTION",
+	"IF",
+	"INTEGER",
+	"LONGINT",
+	"NIL",
+	"OF",
+	"PROCEDURE",
+	"PROGRAM",
+	"REAL",
+	"RECORD",
+	"STRING",
+	"TO",
+	"THEN",
+	"TRUE",
+	"VAR"
 ]
