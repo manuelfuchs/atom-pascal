@@ -3,5 +3,10 @@
 		"displayText": "@array",
 		"snippet": "ARRAY[$1..$2] OF $3",
 		"description": "ARRAY declaration"
+	},
+	{
+		"displayText": "@array parameter definition",
+		"snippet": "ARRAY OF $1",
+		"description": "ARRAY Parameter definition"
 	}
 ]
