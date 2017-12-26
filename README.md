@@ -1,7 +1,5 @@
 # Pascal
 
-Enables several code snippets and syntax highlighting for the programming language Pascal.
-
 ### Features
 * Syntax Highlighting
 * Auto complete with common terms like STRING, INTEGER, ...
