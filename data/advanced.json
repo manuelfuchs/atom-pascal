@@ -136,8 +136,13 @@
 	},
 	{
 		"displayText": "@unit",
-		"snippet": "UNIT $1\nINTERFACE\n\t${2:public method list}\nIMPLEMENTATION\n\t${3:method implementation}\nBEGIN\n\t$4\nEND;",
+		"snippet": "UNIT $1\nINTERFACE\n\n\t${2:public-method-list}\n\nIMPLEMENTATION\n\t${3:method-implementation}\n\nBEGIN\n\t$4\nEND.",
 		"description": "UNIT snippet"
+	},
+	{
+		"displayText": "@uses",
+		"snippet": "USES\n\t${1:unit-names}",
+		"description": "USES snippet"
 	},
 	{
 		"displayText": "@var",

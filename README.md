@@ -11,6 +11,6 @@
 
 ![Alt Text](https://media.giphy.com/media/3o6nV2EyAImJ6mE2Xe/giphy.gif)
 
-This plugin was written by three students of the University of Applied Sciences Upper Austria Campus Hagenberg and was initially forked from [Atom Autocomplete Boilerplate](https://github.com/lonekorean/atom-autocomplete-boilerplate) from [lonekoren](https://github.com/lonekorean).
+This plugin was written by three students of the University of Applied Sciences Upper Austria Campus Hagenberg and was initially forked from [Atom Autocomplete Boilerplate](https://github.com/lonekorean/atom-autocomplete-boilerplate).
 
 [MIT](LICENSE.md) &copy; Manuel Fuchs, Stefan Zeitlhofer and Thomas Halbmayr
