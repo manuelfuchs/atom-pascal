@@ -1,40 +1,5 @@
 [
 	{
-		"displayText": "@array",
-		"snippet": "ARRAY[$1..$2] OF $3",
-		"description": "ARRAY declaration"
-	},
-	{
-		"displayText": "@array-parameter-definition",
-		"snippet": "ARRAY OF $1",
-		"description": "ARRAY Parameter definition"
-	},
-	{
-		"displayText": "@begin-end-block",
-		"snippet": "BEGIN\n\t$1\nEND;",
-		"description": "A simple BEGIN END block"
-	},
-	{
-		"displayText": "@case",
-		"snippet": "CASE ${1:condition} OF\n\t$2\nEND;",
-		"description": "Case construct"
-	},
-	{
-		"displayText": "@const",
-		"snippet": "CONST\n\t$1",
-		"description": "CONST declaration block for constants"
-	},
-	{
-		"displayText": "@dispose",
-		"snippet": "Dispose(${1:pointer});",
-		"description": "Dispose Method snippet"
-	},
-	{
-		"displayText": "@enum",
-		"snippet": "T${1:EnumName} = (${2:meOne}, $3);",
-		"description": "Add a basic enumeration type"
-	},
-	{
 		"displayText": "@for-to-array",
 		"snippet": "FOR ${1:i} := Low(${2:array-name}) TO High(${3:array-name}) DO BEGIN\n\t$4\nEND;",
 		"description": "for to loop snippet for arrays"

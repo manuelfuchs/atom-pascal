@@ -1,0 +1,33 @@
+'.source.pascal':
+  'array definition':
+    'prefix': 'ARRAY[$1..$2] OF §3'
+    'body': 'ARRAY[$1..$2] OF §3'
+  'array parameter definition':
+    'prefix': 'ARRAY OF $1'
+    'body': 'ARRAY OF $1'
+  'begin end block':
+    'prefix': 'BEGIN $1 END;'
+    'body': """
+      BEGIN
+      \t$1
+      END;
+    """
+  'case construct':
+    'prefix': 'CASE ${1:condition} OF \t$2 END;'
+    'body': """
+      CASE ${1:condition} OF
+      \t$2
+      END;
+    """
+  'const':
+    'prefix': 'CONST \t$1'
+    'body': """
+      CONST
+      \t$1
+    """
+  'dispose':
+    'prefix': 'Dispose(${1:pointer});'
+    'body': 'Dispose(${1:pointer});'
+  'enum':
+    'prefix': 'Enumeration'
+    'body': 'T${1:EnumName} = (${2:meOne}, $3);'
