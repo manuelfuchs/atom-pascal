@@ -3,36 +3,36 @@
     'prefix': 'ARRAY[from..of] OF datatype'
     'body': 'ARRAY[${1:from}..${2:to}] OF §{3:datatype}'
   'array parameter definition':
-    'prefix': 'ARRAY OF $1'
-    'body': 'ARRAY OF $1'
+    'prefix': 'ARRAY OF datatype'
+    'body': 'ARRAY OF ${1:datatype}'
   'begin end block':
-    'prefix': 'BEGIN $1 END;'
+    'prefix': 'BEGIN code END;'
     'body': """
       BEGIN
-      \t$1
+      \t${1:code}
       END;
     """
   'case construct':
-    'prefix': 'CASE ${1:condition} OF \t$2 END;'
+    'prefix': 'CASE condition OF consequence END;'
     'body': """
       CASE ${1:condition} OF
-      \t$2
+      \t${2:consequence}
       END;
     """
   'const':
-    'prefix': 'CONST \t$1'
+    'prefix': 'CONST constants'
     'body': """
       CONST
-      \t$1
+      \t${1:constants}
     """
   'dispose':
-    'prefix': 'Dispose(${1:pointer});'
+    'prefix': 'Dispose(pointer);'
     'body': 'Dispose(${1:pointer});'
   'enum':
-    'prefix': 'Enumeration'
+    'prefix': 'Enumeration enumName = (first, second);'
     'body': 'T${1:EnumName} = (${2:enumOne}, $3);'
   'for to array':
-    'prefix': 'FOR ${1:i} := Low(${2:array-name}) TO High(${3:array-name})'
+    'prefix': 'FOR i := Low(array-name) TO High(array-name)'
     'body': """
       FOR ${1:i} := Low(${2:array-name}) TO High(${3:array-name}) DO BEGIN
       \t$4
@@ -47,27 +47,150 @@
     """
   'for downto array':
     'prefix': 'FOR i := High(array-name) DOWNTO Low(array-name)'
-    'body': 'FOR ${1:i} := High(${2:array-name}) DOWNTO Low(${3:array-name}) DO BEGIN
-    \t$4
-    END;'
+    'body': """
+      FOR ${1:i} := High(${2:array-name}) DOWNTO Low(${3:array-name}) DO BEGIN
+      \t$4
+      END;
+    """
   'for downto string':
     'prefix': 'FOR i := Length(array-name) DOWNTO 1'
-    'body': """FOR ${1:i} := Length(${2:array-name}) DOWNTO 1 DO BEGIN
+    'body': """
+      FOR ${1:i} := Length(${2:array-name}) DOWNTO 1 DO BEGIN
       \t$4
       END;
     """
   'for in':
     'prefix': 'FOR MyElem IN MyList'
-    'body': """FOR ${1:MyElem} IN ${2:MyList} DO BEGIN
+    'body': """
+      FOR ${1:MyElem} IN ${2:MyList} DO BEGIN
       \t$3
       END;
     """
   'free mem':
     'prefix': 'FreeMem(pointer, size-of-releasable-Memory);'
     'body': 'FreeMem(${1:pointer}, ${2:size-of-releasable-Memory});'
-  'enum':
-    'prefix': 'Enumeration'
-    'body': 'T${1:EnumName} = (${2:enumOne}, $3);'
-  'enum':
-    'prefix': 'Enumeration'
-    'body': 'T${1:EnumName} = (${2:enumOne}, $3);'
+  'function definition':
+    'prefix': 'FUNCTION FunctionName(parameter): returnType;'
+    'body': """
+      FUNCTION ${1:FunctionName}(${2:parameter}): ${3:returnType};
+      BEGIN
+      \t${4:code}
+      END;
+    """
+  'function head':
+    'prefix': 'FUNCTION FunctionHeadName(parameter): returnType;'
+    'body': """
+      FUNCTION ${1:FunctionHeadName}(${2:parameter}): ${3:returnType};
+    """
+  'getmem':
+    'prefix': 'GetMem(pointer, size-of-needed-Memory);'
+    'body': 'GetMem(${1:pointer}, ${2:size-of-needed-Memory});'
+  'if':
+    'prefix': 'IF condition THEN BEGIN code END'
+    'body': """
+      IF ${1:condition} THEN BEGIN
+      \t${2:code}
+      END;
+    """
+  'else if':
+    'prefix': 'ELSE IF condition THEN BEGIN code END'
+    'body': """
+      ELSE IF ${1:condition} THEN BEGIN
+      \t${2:condition}
+      END;
+    """
+  'else':
+    'prefix': 'ELSE BEGIN code END'
+    'body': """
+      ELSE BEGIN
+      \t${1:code}
+      END;
+    """
+  'new':
+    'prefix': 'New(pointer);'
+    'body': 'New(${1:pointer});'
+  'procedure':
+    'prefix': 'PROCEDURE ProcedureName(parameters); BEGIN code END;'
+    'body': """
+      PROCEDURE ${1:ProcedureName}(${2:parameters});
+      BEGIN
+      \t${3:code}
+      END;
+    """
+  'procedure head':
+    'prefix': 'PROCEDURE ProcedureHeadName(parameters);'
+    'body': 'PROCEDURE ${1:ProcedureHeadName}(${2:parameters});'
+  'program':
+    'prefix': 'PROGRAM program-name BEGIN main-code END.'
+    'body': """
+      PROGRAM ${1:program-name}
+      BEGIN
+      \t${2:main-code}
+      END.
+    """
+  'readln':
+    'prefix': 'ReadLn(target);'
+    'body': 'ReadLn(${0:target});'
+  'record':
+    'prefix': 'RECORD content END;'
+    'body': """
+      RECORD
+      \t${1:content}
+      END;
+    """
+  'repeat until':
+    'prefix': 'REPEAT loop-code UNTIL condition-applies);'
+    'body': """
+      REPEAT
+      \t${2:loop-code}
+      UNTIL (${1:condition-applies});
+    """
+  'type':
+    'prefix': 'TYPE types'
+    'body': """
+      TYPE
+      \t${1:types}
+    """
+  'unit':
+    'prefix': 'UNIT unit-name INTERFACE public-methods IMPLEMENTATION method-implementations BEGIN initilizations END.'
+    'body': """
+      UNIT ${1:unit-name};
+
+      INTERFACE
+      \t${2:public-methods}
+
+      IMPLEMENTATION
+      ${3:method-implementations}
+
+      BEGIN
+      \t${4:initilizations}
+      END.
+    """
+  'uses':
+    'prefix': 'USES unit-names'
+    'body': """
+      USES
+      \t${1:unit-names}
+    """
+  'var':
+    'prefix': 'VAR variables'
+    'body': """
+      VAR
+      \t${1:variables}
+    """
+  'while-do':
+    'prefix': 'WHILE condition DO BEGIN code END;'
+    'body': """
+      WHILE ${1:condition} DO BEGIN
+      \t${2:code}
+      END;
+    """
+  'writeln':
+    'prefix': 'WriteLn(output);'
+    'body': 'WriteLn(${1:output});'
+  'writeln lineseperator':
+    'prefix': 'WriteLn (empty line seperator)'
+    'body': 'WriteLn;'
+  'write without line break':
+    'prefix': 'Write(output) (without line break)'
+    'body': 'Write($1);'
