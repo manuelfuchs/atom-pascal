@@ -1,7 +1,7 @@
 '.source.pascal':
   'array definition':
-    'prefix': 'ARRAY[$1..$2] OF §3'
-    'body': 'ARRAY[$1..$2] OF §3'
+    'prefix': 'ARRAY[from..of] OF datatype'
+    'body': 'ARRAY[${1:from}..${2:to}] OF §{3:datatype}'
   'array parameter definition':
     'prefix': 'ARRAY OF $1'
     'body': 'ARRAY OF $1'
@@ -30,4 +30,44 @@
     'body': 'Dispose(${1:pointer});'
   'enum':
     'prefix': 'Enumeration'
-    'body': 'T${1:EnumName} = (${2:meOne}, $3);'
+    'body': 'T${1:EnumName} = (${2:enumOne}, $3);'
+  'for to array':
+    'prefix': 'FOR ${1:i} := Low(${2:array-name}) TO High(${3:array-name})'
+    'body': """
+      FOR ${1:i} := Low(${2:array-name}) TO High(${3:array-name}) DO BEGIN
+      \t$4
+      END;
+    """
+  'for to string':
+    'prefix': 'FOR i := 1 TO Length(string-name)'
+    'body': """
+      FOR ${1:i} := 1 TO Length(${2:string-name}) DO BEGIN
+      \t$4
+      END;
+    """
+  'for downto array':
+    'prefix': 'FOR i := High(array-name) DOWNTO Low(array-name)'
+    'body': 'FOR ${1:i} := High(${2:array-name}) DOWNTO Low(${3:array-name}) DO BEGIN
+    \t$4
+    END;'
+  'for downto string':
+    'prefix': 'FOR i := Length(array-name) DOWNTO 1'
+    'body': """FOR ${1:i} := Length(${2:array-name}) DOWNTO 1 DO BEGIN
+      \t$4
+      END;
+    """
+  'for in':
+    'prefix': 'FOR MyElem IN MyList'
+    'body': """FOR ${1:MyElem} IN ${2:MyList} DO BEGIN
+      \t$3
+      END;
+    """
+  'free mem':
+    'prefix': 'FreeMem(pointer, size-of-releasable-Memory);'
+    'body': 'FreeMem(${1:pointer}, ${2:size-of-releasable-Memory});'
+  'enum':
+    'prefix': 'Enumeration'
+    'body': 'T${1:EnumName} = (${2:enumOne}, $3);'
+  'enum':
+    'prefix': 'Enumeration'
+    'body': 'T${1:EnumName} = (${2:enumOne}, $3);'
