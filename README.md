@@ -2,15 +2,15 @@
 
 ### Features
 * Syntax Highlighting
-* Auto complete with common terms like STRING, INTEGER, ...
-* Easy code snippet insert option with the @ character
+* Auto complete for FPC datatypes
+* Easy code snippet insertion
 
-![Alt Text](https://media.giphy.com/media/26FfhotMtEy776QOQ/giphy.gif)
+![Alt Text](https://media.giphy.com/media/xT1Ra3gNnQcoNbAvte/giphy.gif)
 
-![Alt Text](https://media.giphy.com/media/3o6nURTxOaZl3OJ6jS/giphy.gif)
+![Alt Text](https://media.giphy.com/media/3o6nV05smZnGm21Ybe/giphy.gif)
 
-![Alt Text](https://media.giphy.com/media/3o6nV2EyAImJ6mE2Xe/giphy.gif)
+![Alt Text](https://media.giphy.com/media/xT1R9z0sHi1BGiwG76/giphy.gif)
 
-This plugin was written by three students of the University of Applied Sciences Upper Austria Campus Hagenberg and was initially forked from [Atom Autocomplete Boilerplate](https://github.com/lonekorean/atom-autocomplete-boilerplate).
+This plugin was written by Manuel Fuchs, a student at the University of Applied Sciences Upper Austria Campus Hagenberg and was initially forked from [Atom Autocomplete Boilerplate](https://github.com/lonekorean/atom-autocomplete-boilerplate).
 
-[MIT](LICENSE.md) &copy; Manuel Fuchs, Stefan Zeitlhofer and Thomas Halbmayr
+[MIT](LICENSE.md) &copy; Manuel Fuchs
