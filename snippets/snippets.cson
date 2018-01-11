@@ -1,4 +1,7 @@
 '.source.pascal':
+  'assignment':
+    'prefix': 'variable = value'
+    'body': '${1:variable} = ${2:value};$3'
   'array definition':
     'prefix': 'ARRAY[from..of] OF datatype'
     'body': 'ARRAY[${1:from}..${2:to}] OF §{3:datatype}'
@@ -27,10 +30,10 @@
     """
   'dispose':
     'prefix': 'Dispose(pointer);'
-    'body': 'Dispose(${1:pointer});'
+    'body': 'Dispose(${1:pointer});$2'
   'enum':
     'prefix': 'Enumeration enumName = (first, second);'
-    'body': 'T${1:EnumName} = (${2:enumOne}, $3);'
+    'body': 'T${1:EnumName} = (${2:enumOne}, $3);$4'
   'for to array':
     'prefix': 'FOR i := Low(array-name) TO High(array-name)'
     'body': """
@@ -68,7 +71,7 @@
     """
   'free mem':
     'prefix': 'FreeMem(pointer, size-of-releasable-Memory);'
-    'body': 'FreeMem(${1:pointer}, ${2:size-of-releasable-Memory});'
+    'body': 'FreeMem(${1:pointer}, ${2:size-of-releasable-Memory});$3'
   'function definition':
     'prefix': 'FUNCTION FunctionName(parameter): returnType;'
     'body': """
@@ -106,6 +109,9 @@
       \t${1:code}
       END;
     """
+  'longint':
+    'prefix': 'LONGINT'
+    'body': 'LONGINT'
   'new':
     'prefix': 'New(pointer);'
     'body': 'New(${1:pointer});'
@@ -121,9 +127,12 @@
     'prefix': 'PROCEDURE ProcedureHeadName(parameters);'
     'body': 'PROCEDURE ${1:ProcedureHeadName}(${2:parameters});'
   'program':
-    'prefix': 'PROGRAM program-name BEGIN main-code END.'
+    'prefix': 'PROGRAM program-name VAR variables BEGIN main-code END.'
     'body': """
-      PROGRAM ${1:program-name}
+      PROGRAM ${1:program-name};
+
+      VAR
+      \t${3:variables}
       BEGIN
       \t${2:main-code}
       END.
@@ -173,11 +182,14 @@
       \t${1:unit-names}
     """
   'var':
-    'prefix': 'VAR variables'
+    'prefix': 'VAR variable: datatype'
     'body': """
       VAR
-      \t${1:variables}
+      \t${1:variable}: ${2:datatype};
     """
+  'variable definition':
+    'prefix': 'variable: datatype'
+    'body': '${1:variable}: ${2:datatype};$3'
   'while-do':
     'prefix': 'WHILE condition DO BEGIN code END;'
     'body': """
@@ -187,10 +199,79 @@
     """
   'writeln':
     'prefix': 'WriteLn(output);'
-    'body': 'WriteLn(${1:output});'
+    'body': 'WriteLn(${1:output});$2'
   'writeln lineseperator':
     'prefix': 'WriteLn (empty line seperator)'
-    'body': 'WriteLn;'
+    'body': 'WriteLn;$1'
   'write without line break':
     'prefix': 'Write(output) (without line break)'
-    'body': 'Write($1);'
+    'body': 'Write($1);$2'
+
+
+
+  'datatype byte':
+    'prefix': 'BYTE'
+    'body': 'BYTE'
+  'datatype shortint':
+    'prefix': 'SHORTINT'
+    'body': 'SHORTINT'
+  'datatype char':
+    'prefix': 'CHAR'
+    'body': 'CHAR'
+  'datatype smallint':
+    'prefix': 'SMALLINT'
+    'body': 'SMALLINT'
+  'datatype word':
+    'prefix': 'WORD'
+    'body': 'WORD'
+  'datatype integer':
+    'prefix': 'INTEGER'
+    'body': 'INTEGER'
+  'datatype cardinal':
+    'prefix': 'CARDINAL'
+    'body': 'CARDINAL'
+  'datatype longint':
+    'prefix': 'LONGINT'
+    'body': 'LONGINT'
+  'datatype longword':
+    'prefix': 'LONGWORD'
+    'body': 'LONGWORD'
+  'datatype int64':
+    'prefix': 'INT64'
+    'body': 'INT64'
+  'datatype qword':
+    'prefix': 'QWORD'
+    'body': 'QWORD'
+  'datatype string':
+    'prefix': 'STRING'
+    'body': 'STRING'
+  'datatype real':
+    'prefix': 'REAL'
+    'body': 'REAL'
+  'datatype single':
+    'prefix': 'SINGLE'
+    'body': 'SINGLE'
+  'datatype double':
+    'prefix': 'DOUBLE'
+    'body': 'DOUBLE'
+  'datatype extended':
+    'prefix': 'EXTENDED'
+    'body': 'EXTENDED'
+  'datatype comp':
+    'prefix': 'COMP'
+    'body': 'COMP'
+  'datatype currency':
+    'prefix': 'CURRENCY'
+    'body': 'CURRENCY'
+  'datatype boolean':
+    'prefix': 'BOOLEAN'
+    'body': 'BOOLEAN'
+  'datatype bytebool':
+    'prefix': 'BYTEBOOL'
+    'body': 'BYTEBOOL'
+  'datatype wordbool':
+    'prefix': 'WORDBOOL'
+    'body': 'WORDBOOL'
+  'datatype longbool':
+    'prefix': 'LONGBOOL'
+    'body': 'LONGBOOL'
