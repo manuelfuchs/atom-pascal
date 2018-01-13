@@ -2,10 +2,10 @@
   'assignment':
     'prefix': 'variable = value'
     'body': '${1:variable} = ${2:value};$3'
-  'array definition':
+  'array declaration':
     'prefix': 'ARRAY[from..of] OF datatype'
-    'body': 'ARRAY[${1:from}..${2:to}] OF §{3:datatype}'
-  'array parameter definition':
+    'body': 'ARRAY[${1:from}..${2:to}] OF §{3:datatype};'
+  'array parameter declaration':
     'prefix': 'ARRAY OF datatype'
     'body': 'ARRAY OF ${1:datatype}'
   'begin end block':
@@ -37,8 +37,8 @@
   'for to array':
     'prefix': 'FOR i := Low(array-name) TO High(array-name)'
     'body': """
-      FOR ${1:i} := Low(${2:array-name}) TO High(${3:array-name}) DO BEGIN
-      \t$4
+      FOR ${1:i} := Low(${2:array-name}) TO High(${2:array-name}) DO BEGIN
+      \t$3
       END;
     """
   'for to string':
@@ -51,7 +51,7 @@
   'for downto array':
     'prefix': 'FOR i := High(array-name) DOWNTO Low(array-name)'
     'body': """
-      FOR ${1:i} := High(${2:array-name}) DOWNTO Low(${3:array-name}) DO BEGIN
+      FOR ${1:i} := High(${2:array-name}) DOWNTO Low(${2:array-name}) DO BEGIN
       \t$4
       END;
     """
@@ -59,7 +59,7 @@
     'prefix': 'FOR i := Length(array-name) DOWNTO 1'
     'body': """
       FOR ${1:i} := Length(${2:array-name}) DOWNTO 1 DO BEGIN
-      \t$4
+      \t$3
       END;
     """
   'for in':
@@ -78,12 +78,13 @@
       FUNCTION ${1:FunctionName}(${2:parameter}): ${3:returnType};
       BEGIN
       \t${4:code}
+      \t${1:FunctionName} := ;
       END;
     """
-  'function head':
-    'prefix': 'FUNCTION FunctionHeadName(parameter): returnType;'
+  'function declaration':
+    'prefix': 'FUNCTION FunctionHeadname(parameter): returnType;'
     'body': """
-      FUNCTION ${1:FunctionHeadName}(${2:parameter}): ${3:returnType};
+      FUNCTION ${1:FunctionName}(${2:parameter}): ${3:returnType};
     """
   'getmem':
     'prefix': 'GetMem(pointer, size-of-needed-Memory);'
@@ -109,13 +110,10 @@
       \t${1:code}
       END;
     """
-  'longint':
-    'prefix': 'LONGINT'
-    'body': 'LONGINT'
   'new':
     'prefix': 'New(pointer);'
     'body': 'New(${1:pointer});'
-  'procedure':
+  'procedure definition':
     'prefix': 'PROCEDURE ProcedureName(parameters); BEGIN code END;'
     'body': """
       PROCEDURE ${1:ProcedureName}(${2:parameters});
@@ -123,9 +121,9 @@
       \t${3:code}
       END;
     """
-  'procedure head':
+  'procedure declaration':
     'prefix': 'PROCEDURE ProcedureHeadName(parameters);'
-    'body': 'PROCEDURE ${1:ProcedureHeadName}(${2:parameters});'
+    'body': 'PROCEDURE ${1:ProcedureName}(${2:parameters});'
   'program':
     'prefix': 'PROGRAM program-name VAR variables BEGIN main-code END.'
     'body': """
@@ -187,7 +185,7 @@
       VAR
       \t${1:variable}: ${2:datatype};
     """
-  'variable definition':
+  'variable declaration':
     'prefix': 'variable: datatype'
     'body': '${1:variable}: ${2:datatype};$3'
   'while-do':
