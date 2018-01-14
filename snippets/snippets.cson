@@ -4,7 +4,7 @@
     'body': '${1:variable} = ${2:value};$3'
   'array declaration':
     'prefix': 'ARRAY[from..of] OF datatype'
-    'body': 'ARRAY[${1:from}..${2:to}] OF §{3:datatype};'
+    'body': 'ARRAY[${1:from}..${2:to}] OF ${3:datatype};'
   'array parameter declaration':
     'prefix': 'ARRAY OF datatype'
     'body': 'ARRAY OF ${1:datatype}'
@@ -31,6 +31,20 @@
   'dispose':
     'prefix': 'Dispose(pointer);'
     'body': 'Dispose(${1:pointer});$2'
+  'else if':
+    'prefix': 'ELSE IF condition THEN BEGIN code END'
+    'body': """
+      ELSE IF ${1:condition} THEN BEGIN
+      \t${2:code}
+      END;
+    """
+  'else':
+    'prefix': 'ELSE BEGIN code END'
+    'body': """
+      ELSE BEGIN
+      \t${1:code}
+      END;
+    """
   'enum':
     'prefix': 'Enumeration enumName = (first, second);'
     'body': 'T${1:EnumName} = (${2:enumOne}, $3);$4'
@@ -45,14 +59,14 @@
     'prefix': 'FOR i := 1 TO Length(string-name)'
     'body': """
       FOR ${1:i} := 1 TO Length(${2:string-name}) DO BEGIN
-      \t$4
+      \t$3
       END;
     """
   'for downto array':
     'prefix': 'FOR i := High(array-name) DOWNTO Low(array-name)'
     'body': """
       FOR ${1:i} := High(${2:array-name}) DOWNTO Low(${2:array-name}) DO BEGIN
-      \t$4
+      \t$3
       END;
     """
   'for downto string':
@@ -78,7 +92,7 @@
       FUNCTION ${1:FunctionName}(${2:parameter}): ${3:returnType};
       BEGIN
       \t${4:code}
-      \t${1:FunctionName} := ;
+      \t${1:FunctionName} := result;
       END;
     """
   'function declaration':
@@ -204,6 +218,15 @@
   'write without line break':
     'prefix': 'Write(output) (without line break)'
     'body': 'Write($1);$2'
+
+
+
+  'true':
+    'prefix': 'TRUE'
+    'body': 'TRUE'
+  'false':
+    'prefix': 'FALSE'
+    'body': 'FALSE'
 
 
 
