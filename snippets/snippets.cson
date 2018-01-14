@@ -221,6 +221,9 @@
 
 
 
+  'nil':
+    'prefix': 'NIL'
+    'body': 'NIL'
   'true':
     'prefix': 'TRUE'
     'body': 'TRUE'
