@@ -117,7 +117,7 @@
     'prefix': 'ELSE IF condition THEN BEGIN code END'
     'body': """
       ELSE IF ${1:condition} THEN BEGIN
-      \t${2:condition}
+      \t${2:code}
       END;
     """
   'else':
@@ -129,9 +129,9 @@
     """
   'new':
     'prefix': 'New(pointer);'
-    'body': 'New(${1:pointer});'
+    'body': 'New(${1:pointer});$2'
   'procedure definition':
-    'prefix': 'PROCEDURE ProcedureName(parameters); BEGIN code END;'
+    'prefix': 'PROCEDURE ProcedureName(parameters);'
     'body': """
       PROCEDURE ${1:ProcedureName}(${2:parameters});
       BEGIN
@@ -147,9 +147,9 @@
       PROGRAM ${1:program-name};
 
       VAR
-      \t${3:variables}
+      \t${2:variables}
       BEGIN
-      \t${2:main-code}
+      \t${3:main-code}
       END.
     """
   'readln':
@@ -200,7 +200,7 @@
     'prefix': 'VAR variable: datatype'
     'body': """
       VAR
-      \t${1:variable}: ${2:datatype};
+      \t${1:variable}: ${2:datatype};$3
     """
   'variable declaration':
     'prefix': 'variable: datatype'
