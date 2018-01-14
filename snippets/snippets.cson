@@ -90,9 +90,12 @@
     'prefix': 'FUNCTION FunctionName(parameter): returnType;'
     'body': """
       FUNCTION ${1:FunctionName}(${2:parameter}): ${3:returnType};
+      \tVAR
+      \t\t${4:result}: ${3:returnType};
       BEGIN
-      \t${4:code}
-      \t${1:FunctionName} := result;
+      \t${5:code}
+
+      \t${1:FunctionName} := ${4:result};
       END;
     """
   'function declaration':
