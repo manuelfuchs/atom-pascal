@@ -11,6 +11,4 @@
 
 ![Alt Text](https://media.giphy.com/media/xT1R9z0sHi1BGiwG76/giphy.gif)
 
-This plugin was written by Manuel Fuchs, a student at the University of Applied Sciences Upper Austria Campus Hagenberg and was initially forked from [Atom Autocomplete Boilerplate](https://github.com/lonekorean/atom-autocomplete-boilerplate).
-
-[MIT](LICENSE.md) &copy; Manuel Fuchs
+This repository stays under the [MIT License](LICENSE.md), so feel free to contribute for yourself or the community.
