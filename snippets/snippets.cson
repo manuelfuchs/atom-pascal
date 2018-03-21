@@ -12,7 +12,7 @@
     'prefix': 'BEGIN code END;'
     'body': """
       BEGIN
-      \t${1:code}
+      \t$1
       END;
     """
   'case construct':
@@ -35,14 +35,14 @@
     'prefix': 'ELSE BEGIN code END'
     'body': """
       ELSE BEGIN
-      \t${1:code}
+      \t$1
       END;
     """
   'else if':
     'prefix': 'ELSE IF condition THEN BEGIN code END'
     'body': """
       ELSE IF ${1:condition} THEN BEGIN
-      \t${2:code}
+      \t$2
       END;
     """
   'enum':
@@ -79,7 +79,7 @@
       \tVAR
       \t\t${4:result}: ${3:returnType};
       BEGIN
-      \t${5:code}
+      \t$5
 
       \t${1:FunctionName} := ${4:result};
       END;
@@ -87,7 +87,7 @@
   'function declaration':
     'prefix': 'FUNCTION FunctionHeadname(parameter): returnType;'
     'body': """
-      FUNCTION ${1:FunctionName}(${2:parameter}): ${3:returnType};
+      FUNCTION ${1:FunctionName}(${3:parameter}): ${2:returnType};
     """
   'getmem':
     'prefix': 'GetMem(pointer, size-of-needed-Memory);'
@@ -96,7 +96,7 @@
     'prefix': 'IF condition THEN BEGIN code END'
     'body': """
       IF ${1:condition} THEN BEGIN
-      \t${2:code}
+      \t$2
       END;
     """
   'new':
@@ -107,7 +107,7 @@
     'body': """
       PROCEDURE ${1:ProcedureName}(${2:parameters});
       BEGIN
-      \t${3:code}
+      \t$3
       END;
     """
   'procedure declaration':
@@ -119,7 +119,7 @@
       PROGRAM ${1:program-name};
 
       BEGIN
-      \t${2:main-code}
+      \t$2
       END.
     """
   'random':
@@ -127,7 +127,7 @@
     'body': 'Random;'
   'random with boundary':
     'prefix': 'Random(boundary);'
-    'body': 'Random(${1:boudary});'
+    'body': 'Random(${1:boundary});'
   'randomize':
     'prefix': 'Randomize;'
     'body': 'Randomize;'
