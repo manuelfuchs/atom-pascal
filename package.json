@@ -1,7 +1,7 @@
 {
   "name": "pascal",
   "main": "./lib/main",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Enables several code snippets and syntax highlighting for the programming language Pascal.",
   "keywords": [
     "pascal",
