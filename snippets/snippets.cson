@@ -31,20 +31,6 @@
   'dispose':
     'prefix': 'Dispose(pointer);'
     'body': 'Dispose(${1:pointer});$2'
-  'else if':
-    'prefix': 'ELSE IF condition THEN BEGIN code END'
-    'body': """
-      ELSE IF ${1:condition} THEN BEGIN
-      \t${2:code}
-      END;
-    """
-  'else':
-    'prefix': 'ELSE BEGIN code END'
-    'body': """
-      ELSE BEGIN
-      \t${1:code}
-      END;
-    """
   'enum':
     'prefix': 'Enumeration enumName = (first, second);'
     'body': 'T${1:EnumName} = (${2:enumOne}, $3);$4'
@@ -138,6 +124,15 @@
       \t${3:main-code}
       END.
     """
+  'random':
+    'prefix': 'Random;'
+    'body': 'Random;'
+  'random with boundary':
+    'prefix': 'Random(boundary);'
+    'body': 'Random(${1:boudary});'
+  'randomize':
+    'prefix': 'Randomize;'
+    'body': 'Randomize;'
   'readln':
     'prefix': 'ReadLn(target);'
     'body': 'ReadLn(${0:target});'
