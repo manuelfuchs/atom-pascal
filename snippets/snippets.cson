@@ -31,6 +31,20 @@
   'dispose':
     'prefix': 'Dispose(pointer);'
     'body': 'Dispose(${1:pointer});$2'
+  'else':
+    'prefix': 'ELSE BEGIN code END'
+    'body': """
+      ELSE BEGIN
+      \t${1:code}
+      END;
+    """
+  'else if':
+    'prefix': 'ELSE IF condition THEN BEGIN code END'
+    'body': """
+      ELSE IF ${1:condition} THEN BEGIN
+      \t${2:code}
+      END;
+    """
   'enum':
     'prefix': 'Enumeration enumName = (first, second);'
     'body': 'T${1:EnumName} = (${2:enumOne}, $3);$4'
@@ -85,20 +99,6 @@
       \t${2:code}
       END;
     """
-  'else if':
-    'prefix': 'ELSE IF condition THEN BEGIN code END'
-    'body': """
-      ELSE IF ${1:condition} THEN BEGIN
-      \t${2:code}
-      END;
-    """
-  'else':
-    'prefix': 'ELSE BEGIN code END'
-    'body': """
-      ELSE BEGIN
-      \t${1:code}
-      END;
-    """
   'new':
     'prefix': 'New(pointer);'
     'body': 'New(${1:pointer});$2'
@@ -118,10 +118,8 @@
     'body': """
       PROGRAM ${1:program-name};
 
-      VAR
-      \t${2:variables}
       BEGIN
-      \t${3:main-code}
+      \t${2:main-code}
       END.
     """
   'random':
